@@ -46,12 +46,32 @@ const App = () => (
     <Admin
       dataProvider={dataProvider}
       i18nProvider={i18nProvider}
-      // authProvider={authProvider}
+      authProvider={authProvider}
       loginPage={Inicio}
     >
       {permissions => {
         return [
-          <ResourceWithPermissions name="news" {...News} />,
+          <ResourceWithPermissions
+            name="news"
+            {...News}
+            permissions={permissions}
+          />,
+
+          <ResourceWithPermissions
+            name="actions"
+            {...Actions}
+            permissions={permissions}
+          />,
+          <ResourceWithPermissions
+            name="clinics"
+            {...Clinics}
+            permissions={permissions}
+          />,
+          <ResourceWithPermissions
+            name="vaccinations"
+            {...Vaccinations}
+            permissions={permissions}
+          />,
           <ResourceWithPermissions
             name="roles"
             {...Roles}
@@ -61,21 +81,16 @@ const App = () => (
             name="users"
             {...Users}
             permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="actions"
-            {...Users}
-            permissions={permissions}
           />
         ];
       }}
-      <Resource name="news" {...News} />
+      {/*   <Resource name="news" {...News} />
       <Resource name="actions" {...Actions} />
       <Resource name="clinics" {...Clinics} />
       <Resource name="vaccinations" {...Vaccinations} />
 
       <Resource name="roles" {...Roles} />
-      <Resource name="users" {...Users} />
+      <Resource name="users" {...Users} /> */}
     </Admin>
   </div>
 );

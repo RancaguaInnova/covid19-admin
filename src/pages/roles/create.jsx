@@ -53,6 +53,7 @@ const RolesCreate = props => {
             />
           </span>
         </Labeled>
+
         <Labeled label="Acciones">
           <span className="flex">
             <BooleanInput
@@ -90,6 +91,80 @@ const RolesCreate = props => {
               source="actions.enabled"
               className="column16"
               defaultValue={false}
+            />
+          </span>
+        </Labeled>
+        <Labeled label="Centros de Salud">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="clinics.create"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Listar"
+              source="clinics.list"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Editar"
+              source="clinics.edit"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="clinics.show"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="clinics.delete"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="clinics.enabled"
+              className="column16"
+              defaultValue={false}
+            />
+          </span>
+        </Labeled>
+        <Labeled label="Vacunatorios">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="vaccinations.create"
+              className="column16"
+            />
+            <BooleanInput
+              label="Listar"
+              source="vaccinations.list"
+              className="column16"
+            />
+            <BooleanInput
+              label="Editar"
+              source="vaccinations.edit"
+              className="column16"
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="vaccinations.show"
+              className="column16"
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="vaccinations.delete"
+              className="column16"
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="vaccinations.enabled"
+              className="column16"
             />
           </span>
         </Labeled>
