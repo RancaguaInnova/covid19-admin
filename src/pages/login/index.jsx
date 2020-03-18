@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { userLogin } from "react-admin";
+import { useLogin, userLogin, useNotify, Notification } from "react-admin";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -16,13 +16,15 @@ function MyLoginPage(props) {
   let [password, setPassword] = useState("");
   const [open, setOpen] = React.useState(false);
 
+  const [openErrorUser, setOpenErrorUser] = React.useState(false);
+  const login = useLogin();
   const useStyles = makeStyles(theme => ({
     root: {
       height: "100vh"
     },
     image: {
       backgroundImage:
-        "url(https://images.unsplash.com/flagged/photo-1584036561584-b03c19da874c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)",
+        "url(https://images.pexels.com/photos/3943901/pexels-photo-3943901.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
       //background: "#ccc",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -47,12 +49,16 @@ function MyLoginPage(props) {
     }
   }));
 
-  const submit = e => {
+  const submit = async e => {
     e.preventDefault();
 
     if (username !== "" && password !== "") {
       const credentials = { username: username, password: password };
-      props.userLogin(credentials);
+      // var res = props.userLogin(credentials);
+      var response = await login(credentials).catch(() => null);
+      if (!response) {
+        setOpenErrorUser(true);
+      }
     } else {
       setOpen(true);
     }
@@ -117,6 +123,26 @@ function MyLoginPage(props) {
           }
         >
           Debe ingresar el usuario y contraseña
+        </Alert>
+      </Collapse>
+      <Collapse in={openErrorUser}>
+        <Alert
+          variant="filled"
+          severity="error"
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpenErrorUser(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          Debe ingresar el usuario y contraseña válidos
         </Alert>
       </Collapse>
 

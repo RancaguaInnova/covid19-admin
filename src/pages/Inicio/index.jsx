@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     backgroundImage:
-      "url(https://images.unsplash.com/flagged/photo-1584036561584-b03c19da874c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)",
+      "url(https://images.pexels.com/photos/3943901/pexels-photo-3943901.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
     //background: "#ccc",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

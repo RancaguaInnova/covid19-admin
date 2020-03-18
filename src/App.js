@@ -34,8 +34,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const options = {
-  logging: true,
-  watch: ["activities"]
+  logging: false
 };
 
 const dataProvider = FirebaseDataProvider(firebaseConfig, options);
