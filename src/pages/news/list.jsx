@@ -14,7 +14,9 @@ const NewsList = props => (
     <Datagrid rowClick="edit">
       <DateField source="date" label="Fecha" showTime />
       <TextField source="title" label="Titulo" />
-      <TextField source="subtitle" label="Subtitulo" />
+      {/*       <TextField source="subtitle" label="Subtitulo" />
+       */}
+
       <BooleanField source="active" label="Activo" />
       <EditButton label="Editar" />
       <DeleteButton label="Eliminar" />

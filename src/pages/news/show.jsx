@@ -12,7 +12,8 @@ const NewsShow = props => (
       <TextField source="id" />
       <DateField source="date" label="Fecha" showTime locales="es-ES" />
       <TextField source="title" label="Titulo" />
-      <TextField source="subtitle" label="SubTitulo" />
+      {/*       <TextField source="subtitle" label="SubTitulo" />
+       */}{" "}
       <TextField source="description" label="Descripción" />
       <BooleanField source="active" label="Activo" />
     </SimpleShowLayout>

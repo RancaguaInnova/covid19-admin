@@ -35,22 +35,22 @@ const NewsEdit = props => (
   <Edit {...props} title={"Editando Noticia"} undoable={false}>
     <SimpleForm>
       <DateTimeInput source="date" label="Fecha y Hora" />
-      <TextInput source="title" label="Titulo" />
-      <TextInput source="subtitle" label="Subtitulo" />
+      <TextInput source="title" label="Título" />
+      {/*       <TextInput source="subtitle" label="Subtítulo" />
+       */}
       <TextInput source="description" label="Descripción" />
       <TextInput source="urlExterna" label="Url" type="url" />
-
-      <ImageInput source="images" label="Imagenes" accept="image/*">
-        <ImageField source="src" title="title" />
-      </ImageInput>
-      <FileInput
-        source="documents"
-        label="Documentos"
-        accept="application/pdf"
-        multiple
-      >
-        <FileField source="src" title="title" />
-      </FileInput>
+      {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
+    <ImageField source="src" title="title" />
+  </ImageInput>
+  <FileInput
+    source="documents"
+    label="Documentos"
+    accept="application/pdf"
+    multiple
+  >
+    <FileField source="src" title="title" />
+  </FileInput> */}
       <BooleanInput source="active" label="Activo" />
     </SimpleForm>
   </Edit>
