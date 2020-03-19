@@ -14,8 +14,8 @@ import {
   minLength,
   maxLength
 } from "react-admin";
-const validateName = [required(), minLength(0), maxLength(155)];
-const validateDescription = [minLength(0), maxLength(500)];
+const validateName = [required(), minLength(0), maxLength(100)];
+const validateDescription = [minLength(0), maxLength(140)];
 
 const validateDate = [required()];
 const NewsEdit = props => (
