@@ -7,7 +7,9 @@ import {
   minLength,
   maxLength,
   Edit,
-  BooleanInput
+  BooleanInput,
+  ImageInput,
+  ImageField
 } from "react-admin";
 
 const validateName = [required(), minLength(0), maxLength(5550)];
@@ -23,10 +25,15 @@ const ActionEdit = ({ permissions, ...props }) => {
         />
         <TextInput
           source="description"
-          label="Descripción de la acción"
+          label="Descripción de la Recomendación"
           validate={validateName}
+          fullWidth
         />
+        <ImageInput source="images" label="Imagen " accept="image/*">
+          <ImageField source="src" title="title" />
+        </ImageInput>
         <BooleanInput source="active" label="Activo" />
+        <TextInput source="urlVideo" label="Url Video" type="url" fullWidth />
       </SimpleForm>
     </Edit>
   );

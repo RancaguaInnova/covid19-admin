@@ -9,18 +9,32 @@ import {
   ImageField,
   FileInput,
   FileField,
-  DateTimeInput
+  DateTimeInput,
+  required,
+  minLength,
+  maxLength
 } from "react-admin";
 
+const validateName = [required(), minLength(0), maxLength(5550)];
+const validateDate = [required()];
 const NewsCreate = props => (
   <Create title="Crear Noticias" {...props} undoable={false}>
     <SimpleForm>
-      <DateTimeInput source="date" label="Fecha y Hora" />
-      <TextInput source="title" label="Título" />
+      <DateTimeInput
+        source="date"
+        label="Fecha y Hora"
+        validate={validateDate}
+      />
+      <TextInput
+        source="title"
+        label="Título"
+        validate={validateName}
+        fullWidth
+      />
       {/*       <TextInput source="subtitle" label="Subtítulo" />
        */}
-      <TextInput source="description" label="Descripción" />
-      <TextInput source="urlExterna" label="Url" type="url" />
+      <TextInput source="description" label="Descripción" fullWidth />
+      <TextInput source="urlExterna" label="Url" type="url" fullWidth />
       {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
         <ImageField source="src" title="title" />
       </ImageInput>

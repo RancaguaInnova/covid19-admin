@@ -1,8 +1,8 @@
-import create from './create'
-import edit from './edit'
-import list from './list'
-import show from './show'
-import icon from './icon'
+import create from "./create";
+import edit from "./edit";
+import list from "./list";
+import show from "./show";
+import icon from "./icon";
 
 export default {
   list: list,
@@ -10,5 +10,5 @@ export default {
   edit: edit,
   icon: icon,
   show: show,
-  options: { label: 'Acciones' }
-}
+  options: { label: "Recomedaciones" }
+};

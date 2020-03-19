@@ -18,9 +18,13 @@ const VaccinationEdit = ({ permissions, ...props }) => {
       <SimpleForm redirect={"/vaccinations"}>
         <DateInput source="from" label="Fecha desde" validate={validateDate} />
         <DateInput source="to" label="Fecha hasta" validate={validateDate} />
-        <TextInput source="name_place" label="Lugar de Vacunación" />
-        <TextInput source="businessHours" label="Horario de Atención" />
-        <TextInput source="complete_address" label="Direción" />
+        <TextInput source="name_place" label="Lugar de Vacunación" fullWidth />
+        <TextInput
+          source="businessHours"
+          label="Horario de Atención"
+          fullWidth
+        />
+        <TextInput source="complete_address" label="Direción" fullWidth />
         <TextInput source="address.latitude" label="Latitud" />
         <TextInput source="address.longitude" label="Longitud" />
         <BooleanInput source="temp" label="Temporal" />

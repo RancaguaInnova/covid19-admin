@@ -21,7 +21,12 @@ const ActionCreate = ({ classes, ...props }) => {
       undoable={false}
     >
       <SimpleForm>
-        <TextInput source="name" label="Nombre" validate={validateName} />
+        <TextInput
+          source="name"
+          label="Nombre"
+          validate={validateName}
+          fullWidth
+        />
         <SelectInput
           source="category"
           label="Categoria"
@@ -40,23 +45,41 @@ const ActionCreate = ({ classes, ...props }) => {
             { id: "cecof", name: "Centro Comunitario de Salud" }
           ]}
         />
-        <TextInput source="information" label="Información del centro" />
+        <TextInput
+          source="information"
+          label="Información del centro"
+          fullWidth
+        />
 
         <TextInput source="url" label="Url" />
-        <TextInput source="businessHours" label="Horario de Atención" />
-        <TextInput source="businessHoursSapu" label="Horario de Sapu" />
+        <TextInput
+          source="businessHours"
+          label="Horario de Atención"
+          fullWidth
+        />
+        <TextInput
+          source="businessHoursSapu"
+          label="Horario de Sapu"
+          fullWidth
+        />
 
-        <TextInput source="iconMapUrl" label="Icono Mapa" />
+        <TextInput source="iconMapUrl" label="Icono Mapa" fullWidth />
 
         <TextInput
           source="contactInformation.address.streetName"
           label="Calle"
+          fullWidth
         />
         <TextInput
           source="contactInformation.address.streetNumber"
           label="Número"
+          fullWidth
         />
-        <TextInput source="contactInformation.address.city" label="Ciudad" />
+        <TextInput
+          source="contactInformation.address.city"
+          label="Ciudad"
+          fullWidth
+        />
         <TextInput
           source="contactInformation.address.latitude"
           label="latitude"
@@ -73,7 +96,7 @@ const ActionCreate = ({ classes, ...props }) => {
           source="contactInformation.phone.mobilePhone"
           label="Numero de Célular"
         />
-        <TextInput source="contactInformation.email" label="Email" />
+        <TextInput source="contactInformation.email" label="Email" fullWidth />
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Create>

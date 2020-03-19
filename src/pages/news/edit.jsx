@@ -9,37 +9,31 @@ import {
   FileField,
   FileInput,
   ImageField,
-  DateTimeInput
+  DateTimeInput,
+  required,
+  minLength,
+  maxLength
 } from "react-admin";
-
-const validateNewsEdit = values => {
-  const errors = {};
-  if (!values.title) {
-    errors.title = ["El titulo de la noticia es requerido"];
-  }
-  if (!values.subtitle) {
-    errors.subtitle = ["El sub titulo de la noticia es requerido"];
-  }
-  if (!values.publicationDate) {
-    errors.publicationDate = ["La fecha de publicación es requerida"];
-  }
-  if (!values.body) {
-    errors.body = ["El cuerpo de la noticia es requerido"];
-  }
-  if (!values.imageUrl) {
-    errors.imageUrl = ["La url de la imagen es requerida"];
-  }
-  return errors;
-};
+const validateName = [required(), minLength(0), maxLength(5550)];
+const validateDate = [required()];
 const NewsEdit = props => (
   <Edit {...props} title={"Editando Noticia"} undoable={false}>
     <SimpleForm>
-      <DateTimeInput source="date" label="Fecha y Hora" />
-      <TextInput source="title" label="Título" />
+      <DateTimeInput
+        source="date"
+        label="Fecha y Hora"
+        validate={validateDate}
+      />
+      <TextInput
+        source="title"
+        label="Título"
+        validate={validateName}
+        fullWidth
+      />
       {/*       <TextInput source="subtitle" label="Subtítulo" />
        */}
-      <TextInput source="description" label="Descripción" />
-      <TextInput source="urlExterna" label="Url" type="url" />
+      <TextInput source="description" label="Descripción" fullWidth />
+      <TextInput source="urlExterna" label="Url" type="url" fullWidth />
       {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
     <ImageField source="src" title="title" />
   </ImageInput>

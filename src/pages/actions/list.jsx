@@ -10,7 +10,7 @@ import {
 } from "react-admin";
 
 const ActionList = ({ ...props }) => (
-  <List {...props} title="Listado Acciones">
+  <List {...props} title="Listado Recomendaciones">
     <Datagrid rowClick="edit">
       <DateField source="date" label="Fecha" showTime />
       <TextField source="description" label="Titulo" />
