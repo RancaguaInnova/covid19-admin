@@ -14,7 +14,9 @@ import {
   minLength,
   maxLength
 } from "react-admin";
-const validateName = [required(), minLength(0), maxLength(5550)];
+const validateName = [required(), minLength(0), maxLength(155)];
+const validateDescription = [minLength(0), maxLength(500)];
+
 const validateDate = [required()];
 const NewsEdit = props => (
   <Edit {...props} title={"Editando Noticia"} undoable={false}>
@@ -32,7 +34,12 @@ const NewsEdit = props => (
       />
       {/*       <TextInput source="subtitle" label="Subtítulo" />
        */}
-      <TextInput source="description" label="Descripción" fullWidth />
+      <TextInput
+        source="description"
+        label="Descripción"
+        fullWidth
+        validate={validateDescription}
+      />
       <TextInput source="urlExterna" label="Url" type="url" fullWidth />
       {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
     <ImageField source="src" title="title" />

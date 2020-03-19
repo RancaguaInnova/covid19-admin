@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Login from "../login";
 import Register from "../Register";
-
+import Reset from "../Reset";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -61,6 +61,8 @@ const PageCharge = props => {
     return <Login PageCharge={PageCharge}></Login>;
   } else if (props.pageInit === "Register") {
     return <Register PageCharge={PageCharge}></Register>;
+  } else if (props.pageInit === "Reset") {
+    return <Reset PageCharge={PageCharge}></Reset>;
   }
 };
 
@@ -73,6 +75,9 @@ function Inicio() {
   };
   const ChangeLogin = () => {
     setPage("Login");
+  };
+  const ChangeResetPassword = () => {
+    setPage("Reset");
   };
 
   return (
@@ -91,8 +96,8 @@ function Inicio() {
           {page ? <PageCharge pageInit={page}></PageCharge> : ""}
 
           {page && page === "Login" ? (
-            <Grid container>
-              <Grid item>
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
                 <Button
                   type="button"
                   fullWidth
@@ -104,10 +109,23 @@ function Inicio() {
                   No tienes cuenta? Registrate
                 </Button>
               </Grid>
+              <Grid item xs={6}>
+                <Button
+                  type="button"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={ChangeResetPassword}
+                >
+                  Olvidaste tu Contraseña
+                </Button>
+              </Grid>
             </Grid>
           ) : (
             ""
           )}
+
           {page && page === "Register" ? (
             <Grid container>
               <Grid item>
@@ -120,6 +138,24 @@ function Inicio() {
                   onClick={ChangeLogin}
                 >
                   Ya tienes cuenta? Ingresa
+                </Button>
+              </Grid>
+            </Grid>
+          ) : (
+            ""
+          )}
+          {page && page === "Reset" ? (
+            <Grid container>
+              <Grid item>
+                <Button
+                  type="button"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={ChangeLogin}
+                >
+                  Volver
                 </Button>
               </Grid>
             </Grid>

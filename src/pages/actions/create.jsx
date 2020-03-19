@@ -12,7 +12,7 @@ import {
   ImageField
 } from "react-admin";
 
-const validateName = [required(), minLength(0), maxLength(5550)];
+const validateName = [required(), minLength(0), maxLength(255)];
 const validateDate = [required()];
 const ActionCreate = ({ classes, ...props }) => {
   return (
