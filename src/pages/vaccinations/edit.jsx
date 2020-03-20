@@ -27,6 +27,7 @@ const VaccinationEdit = ({ permissions, ...props }) => {
         <TextInput source="complete_address" label="Direción" fullWidth />
         <TextInput source="address.latitude" label="Latitud" />
         <TextInput source="address.longitude" label="Longitud" />
+        <TextInput source="phone" label="Telefono" />
         <BooleanInput source="temp" label="Temporal" />
 
         <BooleanInput source="active" label="Activo" />
