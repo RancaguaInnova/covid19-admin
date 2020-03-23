@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   Datagrid,
   EditButton,
@@ -6,8 +6,8 @@ import {
   BooleanField,
   TextField,
   DeleteButton,
-  DateField
-} from "react-admin";
+} from 'react-admin'
+import DateField from '../../helpers/fields/DateField'
 
 const VaccinationList = ({ ...props }) => (
   <List {...props} title="Listado Vacunatorios">
@@ -24,6 +24,6 @@ const VaccinationList = ({ ...props }) => (
       <DeleteButton label="Eliminar" />
     </Datagrid>
   </List>
-);
+)
 
-export default VaccinationList;
+export default VaccinationList
