@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
   DateInput,
@@ -12,15 +12,15 @@ import {
   DateTimeInput,
   required,
   minLength,
-  maxLength
-} from "react-admin";
+  maxLength,
+} from 'react-admin'
 
-const validateName = [required(), minLength(0), maxLength(100)];
-const validateDescription = [minLength(0), maxLength(140)];
+const validateName = [required(), minLength(0), maxLength(100)]
+const validateDescription = [minLength(0), maxLength(140)]
 
-const validateDate = [required()];
+const validateDate = [required()]
 const NewsCreate = props => (
-  <Create title="Crear Noticias" {...props} undoable={false}>
+  <Create title="Crear Noticias" {...props}>
     <SimpleForm>
       <DateTimeInput
         source="date"
@@ -33,8 +33,7 @@ const NewsCreate = props => (
         validate={validateName}
         fullWidth
       />
-      {/*       <TextInput source="subtitle" label="Subtítulo" />
-       */}
+
       <TextInput
         source="description"
         label="Descripción"
@@ -42,7 +41,8 @@ const NewsCreate = props => (
         validate={validateDescription}
       />
       <TextInput source="urlExterna" label="Url" type="url" fullWidth />
-      {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
+      <TextInput source="urlVideo" label="Url Video" type="url" fullWidth />
+      <ImageInput source="images" label="Imagenes" accept="image/*">
         <ImageField source="src" title="title" />
       </ImageInput>
       <FileInput
@@ -52,9 +52,10 @@ const NewsCreate = props => (
         multiple
       >
         <FileField source="src" title="title" />
-      </FileInput> */}
+      </FileInput>
+
       <BooleanInput source="active" label="Activo" />
     </SimpleForm>
   </Create>
-);
-export default NewsCreate;
+)
+export default NewsCreate

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
   SimpleForm,
   Create,
   BooleanInput,
-  Labeled
-} from "react-admin";
+  Labeled,
+} from 'react-admin'
 
 const RolesCreate = props => {
   return (
@@ -168,6 +168,40 @@ const RolesCreate = props => {
             />
           </span>
         </Labeled>
+        <Labeled label="Tramites y Servicios">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="services.create"
+              className="column16"
+            />
+            <BooleanInput
+              label="Listar"
+              source="services.list"
+              className="column16"
+            />
+            <BooleanInput
+              label="Editar"
+              source="services.edit"
+              className="column16"
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="services.show"
+              className="column16"
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="services.delete"
+              className="column16"
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="services.enabled"
+              className="column16"
+            />
+          </span>
+        </Labeled>
         <Labeled label="Usuarios">
           <span className="flex">
             <BooleanInput
@@ -244,6 +278,6 @@ const RolesCreate = props => {
         </Labeled>
       </SimpleForm>
     </Create>
-  );
-};
-export default RolesCreate;
+  )
+}
+export default RolesCreate

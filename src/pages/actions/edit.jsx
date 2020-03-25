@@ -1,23 +1,33 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
   SimpleForm,
-  DateTimeInput,
   required,
   minLength,
   maxLength,
   Edit,
   BooleanInput,
   ImageInput,
-  ImageField
-} from "react-admin";
+  ImageField,
+  SelectInput,
+  DateTimeInput,
+} from 'react-admin'
 
-const validateName = [required(), minLength(0), maxLength(255)];
-const validateDate = [required()];
+const validateName = [required(), minLength(0), maxLength(255)]
+const validateDate = [required()]
 const ActionEdit = ({ permissions, ...props }) => {
   return (
     <Edit title="Editar acción" {...props}>
       <SimpleForm>
+        <SelectInput
+          source="category"
+          label="Categoria"
+          choices={[
+            { id: 'preventive', name: 'Preventiva' },
+            { id: 'infected', name: 'Contagiado' },
+            { id: 'other', name: 'Otras' },
+          ]}
+        />
         <DateTimeInput
           source="date"
           label="Fecha y Hora"
@@ -36,6 +46,6 @@ const ActionEdit = ({ permissions, ...props }) => {
         <TextInput source="urlVideo" label="Url Video" type="url" fullWidth />
       </SimpleForm>
     </Edit>
-  );
-};
-export default ActionEdit;
+  )
+}
+export default ActionEdit

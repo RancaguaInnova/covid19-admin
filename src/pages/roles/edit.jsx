@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  TextInput,
-  SimpleForm,
-  BooleanInput,
-  Labeled,
-  Edit
-} from "react-admin";
+import React from 'react'
+import { TextInput, SimpleForm, BooleanInput, Labeled, Edit } from 'react-admin'
 
 const AreaEdit = props => {
   return (
@@ -167,6 +161,40 @@ const AreaEdit = props => {
             />
           </span>
         </Labeled>
+        <Labeled label="Tramites y Servicios">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="services.create"
+              className="column16"
+            />
+            <BooleanInput
+              label="Listar"
+              source="services.list"
+              className="column16"
+            />
+            <BooleanInput
+              label="Editar"
+              source="services.edit"
+              className="column16"
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="services.show"
+              className="column16"
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="services.delete"
+              className="column16"
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="services.enabled"
+              className="column16"
+            />
+          </span>
+        </Labeled>
         <Labeled label="Usuarios">
           <span className="flex">
             <BooleanInput
@@ -243,6 +271,6 @@ const AreaEdit = props => {
         </Labeled>
       </SimpleForm>
     </Edit>
-  );
-};
-export default AreaEdit;
+  )
+}
+export default AreaEdit

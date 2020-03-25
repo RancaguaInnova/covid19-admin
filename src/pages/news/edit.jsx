@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
   DateInput,
@@ -12,14 +12,14 @@ import {
   DateTimeInput,
   required,
   minLength,
-  maxLength
-} from "react-admin";
-const validateName = [required(), minLength(0), maxLength(100)];
-const validateDescription = [minLength(0), maxLength(140)];
+  maxLength,
+} from 'react-admin'
+const validateName = [required(), minLength(0), maxLength(100)]
+const validateDescription = [minLength(0), maxLength(140)]
 
-const validateDate = [required()];
+const validateDate = [required()]
 const NewsEdit = props => (
-  <Edit {...props} title={"Editando Noticia"} undoable={false}>
+  <Edit {...props} title={'Editando Noticia'}>
     <SimpleForm>
       <DateTimeInput
         source="date"
@@ -41,19 +41,22 @@ const NewsEdit = props => (
         validate={validateDescription}
       />
       <TextInput source="urlExterna" label="Url" type="url" fullWidth />
-      {/*   <ImageInput source="images" label="Imagenes" accept="image/*">
-    <ImageField source="src" title="title" />
-  </ImageInput>
-  <FileInput
-    source="documents"
-    label="Documentos"
-    accept="application/pdf"
-    multiple
-  >
-    <FileField source="src" title="title" />
-  </FileInput> */}
+      <TextInput source="urlVideo" label="Url Video" type="url" fullWidth />
+
+      <ImageInput source="images" label="Imagenes" accept="image/*">
+        <ImageField source="src" title="title" />
+
+      </ImageInput>
+      <FileInput
+        source="documents"
+        label="Documentos"
+        accept="application/pdf"
+        multiple
+      >
+        <FileField source="src" title="title" />
+      </FileInput>
       <BooleanInput source="active" label="Activo" />
     </SimpleForm>
   </Edit>
-);
-export default NewsEdit;
+)
+export default NewsEdit

@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
-  DateTimeInput,
   SimpleForm,
   Create,
   required,
@@ -9,15 +8,26 @@ import {
   maxLength,
   BooleanInput,
   ImageInput,
-  ImageField
-} from "react-admin";
+  ImageField,
+  SelectInput,
+  DateTimeInput,
+} from 'react-admin'
 
-const validateName = [required(), minLength(0), maxLength(255)];
-const validateDate = [required()];
+const validateName = [required(), minLength(0), maxLength(255)]
+const validateDate = [required()]
 const ActionCreate = ({ classes, ...props }) => {
   return (
     <Create label="Crear" title="Crear Recomendación" {...props}>
       <SimpleForm>
+        <SelectInput
+          source="category"
+          label="Categoria"
+          choices={[
+            { id: 'preventive', name: 'Preventiva' },
+            { id: 'infected', name: 'Contagiado' },
+            { id: 'other', name: 'Otras' },
+          ]}
+        />
         <DateTimeInput
           source="date"
           label="Fecha y Hora"
@@ -37,6 +47,6 @@ const ActionCreate = ({ classes, ...props }) => {
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Create>
-  );
-};
-export default ActionCreate;
+  )
+}
+export default ActionCreate

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {
   TextInput,
   SimpleForm,
@@ -7,10 +7,10 @@ import {
   minLength,
   maxLength,
   Edit,
-  BooleanInput
-} from "react-admin";
+  BooleanInput,
+} from 'react-admin'
 
-const validateName = [required(), minLength(0), maxLength(5550)];
+const validateName = [required(), minLength(0), maxLength(5550)]
 const ActionEdit = ({ permissions, ...props }) => {
   return (
     <Edit title="Editar Centro de Salud" {...props} undoable={false}>
@@ -25,18 +25,18 @@ const ActionEdit = ({ permissions, ...props }) => {
           source="category"
           label="Categoria"
           choices={[
-            { id: "public", name: "Publico" },
-            { id: "private", name: "Privado" }
+            { id: 'public', name: 'Publico' },
+            { id: 'private', name: 'Privado' },
           ]}
         />
         <SelectInput
           source="type"
           label="Tipo de Centro"
           choices={[
-            { id: "hospital", name: "Hospital" },
-            { id: "clinic", name: "Clinica" },
-            { id: "cesfam", name: "Centro de Salud Familiar" },
-            { id: "cecof", name: "Centro Comunitario de Salud" }
+            { id: 'hospital', name: 'Hospital' },
+            { id: 'clinic', name: 'Clinica' },
+            { id: 'cesfam', name: 'Centro de Salud Familiar' },
+            { id: 'cecof', name: 'Centro Comunitario de Salud' },
           ]}
         />
         <TextInput
@@ -54,6 +54,11 @@ const ActionEdit = ({ permissions, ...props }) => {
         <TextInput
           source="businessHoursSapu"
           label="Horario de Sapu"
+          fullWidth
+        />
+        <TextInput
+          source="pathologies"
+          label="Patalogias que esta atendiendo el Centro de Salud"
           fullWidth
         />
 
@@ -91,9 +96,20 @@ const ActionEdit = ({ permissions, ...props }) => {
           label="Numero de Célular"
         />
         <TextInput source="contactInformation.email" label="Email" fullWidth />
+        <BooleanInput
+          source="covid.atention"
+          label="Realiza atención a personas por Corona virus"
+          fullWidth
+        />
+        <BooleanInput
+          source="covid.examen"
+          label="Realiza Examen de Corona virus"
+          fullWidth
+        />
+
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Edit>
-  );
-};
-export default ActionEdit;
+  )
+}
+export default ActionEdit
