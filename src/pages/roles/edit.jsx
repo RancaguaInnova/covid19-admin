@@ -47,6 +47,46 @@ const AreaEdit = props => {
             />
           </span>
         </Labeled>
+        <Labeled label="Cifras">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="statistics.create"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Listar"
+              source="statistics.list"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Editar"
+              source="statistics.edit"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="statistics.show"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="statistics.delete"
+              className="column16"
+              defaultValue={false}
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="statistics.enabled"
+              className="column16"
+              defaultValue={false}
+            />
+          </span>
+        </Labeled>
         <Labeled label="Acciones">
           <span className="flex">
             <BooleanInput

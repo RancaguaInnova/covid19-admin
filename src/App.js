@@ -14,6 +14,7 @@ import Actions from './pages/actions'
 import Clinics from './pages/clinics'
 import Vaccinations from './pages/vaccinations'
 import Services from './pages/services'
+import Statistics from './pages/statistics'
 
 const firebase = require('firebase')
 
@@ -52,6 +53,11 @@ const App = () => (
             {...News}
             permissions={permissions}
           />,
+          <ResourceWithPermissions
+          name="statistics"
+          {...Statistics}
+          permissions={permissions}
+        />,
 
           <ResourceWithPermissions
             name="actions"
@@ -83,6 +89,7 @@ const App = () => (
             {...Users}
             permissions={permissions}
           />,
+
         ]
       }}
       {/*   <Resource name="news" {...News} />
