@@ -26,6 +26,8 @@ const NewsEdit = props => (
         label="Fecha y Hora"
         validate={validateDate}
       />
+            <TextInput source="urlVideo"  label='Url video' type='url' resettable={true} fullWidth/>
+
       <ImageInput source="covidMap" label="Mapa Covid" accept="image/*">
         <ImageField source="src" title="title" />
       </ImageInput>

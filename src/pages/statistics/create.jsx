@@ -27,10 +27,11 @@ const NewsCreate = props => (
         label="Fecha y Hora"
         validate={validateDate}
       />
-      <ImageInput source="covidMap" label="Mapa Covid" accept="image/*">
+      <TextInput source="urlVideo"  label='Url video'  type='url' resettable={true} fullWidth/>
+      <ImageInput source="covidMap" label="Mapa Covid" accept="image/*" resettable={true} >
         <ImageField source="src" title="title" />
       </ImageInput>
-      <ImageInput source="covidGraph" label="Gráfico Covid" accept="image/*">
+      <ImageInput source="covidGraph" label="Gráfico Covid" accept="image/*" resettable={true} >
         <ImageField source="src" title="title" />
       </ImageInput>
      
