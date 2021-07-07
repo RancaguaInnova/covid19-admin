@@ -1,18 +1,17 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
   SimpleForm,
   Create,
   BooleanInput,
   Labeled,
-} from 'react-admin'
+} from "react-admin"
 
-const RolesCreate = props => {
+const RolesCreate = (props) => {
   return (
     <Create title="Crear Rol" {...props}>
       <SimpleForm>
         <TextInput source="name" label="Nombre" defaultValue="" />
-
         <Labeled label="Noticias">
           <span className="flex">
             <BooleanInput
@@ -53,8 +52,6 @@ const RolesCreate = props => {
             />
           </span>
         </Labeled>
-
-
         <Labeled label="Cifras">
           <span className="flex">
             <BooleanInput
@@ -95,7 +92,6 @@ const RolesCreate = props => {
             />
           </span>
         </Labeled>
-
         <Labeled label="Acciones">
           <span className="flex">
             <BooleanInput
@@ -210,6 +206,41 @@ const RolesCreate = props => {
             />
           </span>
         </Labeled>
+        <Labeled label="Informacion de Vacunatorios">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="infovaccinations.create"
+              className="column16"
+            />
+            <BooleanInput
+              label="Listar"
+              source="infovaccinations.list"
+              className="column16"
+            />
+            <BooleanInput
+              label="Editar"
+              source="infovaccinations.edit"
+              className="column16"
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="infovaccinations.show"
+              className="column16"
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="infovaccinations.delete"
+              className="column16"
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="infovaccinations.enabled"
+              className="column16"
+            />
+          </span>
+        </Labeled>
+
         <Labeled label="Tramites y Servicios">
           <span className="flex">
             <BooleanInput

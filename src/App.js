@@ -1,26 +1,28 @@
-import React from 'react'
-import { Admin } from 'react-admin'
-import { FirebaseDataProvider } from 'react-admin-firebase'
-import spanishMessages from '@blackbox-vision/ra-language-spanish'
-import polyglotI18nProvider from 'ra-i18n-polyglot'
-import './App.css'
-import AuthProvider from './auth'
-import News from './pages/news'
-import Inicio from './pages/Inicio'
-import { ResourceWithPermissions } from 'ra-auth-acl'
-import Roles from './pages/roles'
-import Users from './pages/users'
-import Actions from './pages/actions'
-import Clinics from './pages/clinics'
-import Vaccinations from './pages/vaccinations'
-import Services from './pages/services'
-import Statistics from './pages/statistics'
+import React from "react"
+import { Admin } from "react-admin"
+import { FirebaseDataProvider } from "react-admin-firebase"
+import spanishMessages from "@blackbox-vision/ra-language-spanish"
+import polyglotI18nProvider from "ra-i18n-polyglot"
+import "./App.css"
+import AuthProvider from "./auth"
+import News from "./pages/news"
+import Inicio from "./pages/Inicio"
+import { ResourceWithPermissions } from "ra-auth-acl"
+import Roles from "./pages/roles"
+import Users from "./pages/users"
+import Actions from "./pages/actions"
+import Clinics from "./pages/clinics"
+import Vaccinations from "./pages/vaccinations"
+import InfoVaccinations from "./pages/InfoVaccinations"
 
-const firebase = require('firebase')
+import Services from "./pages/services"
+import Statistics from "./pages/statistics"
 
-require('firebase/firestore')
+const firebase = require("firebase")
 
-const i18nProvider = polyglotI18nProvider(() => spanishMessages, 'es')
+require("firebase/firestore")
+
+const i18nProvider = polyglotI18nProvider(() => spanishMessages, "es")
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -46,7 +48,8 @@ const App = () => (
       authProvider={authProvider}
       loginPage={Inicio}
     >
-      {permissions => {
+      {(permissions) => {
+        console.log(permissions)
         return [
           <ResourceWithPermissions
             name="news"
@@ -54,10 +57,10 @@ const App = () => (
             permissions={permissions}
           />,
           <ResourceWithPermissions
-          name="statistics"
-          {...Statistics}
-          permissions={permissions}
-        />,
+            name="statistics"
+            {...Statistics}
+            permissions={permissions}
+          />,
 
           <ResourceWithPermissions
             name="actions"
@@ -75,6 +78,11 @@ const App = () => (
             permissions={permissions}
           />,
           <ResourceWithPermissions
+            name="infovaccinations"
+            {...InfoVaccinations}
+            permissions={permissions}
+          />,
+          <ResourceWithPermissions
             name="services"
             {...Services}
             permissions={permissions}
@@ -89,7 +97,6 @@ const App = () => (
             {...Users}
             permissions={permissions}
           />,
-
         ]
       }}
       {/*   <Resource name="news" {...News} />

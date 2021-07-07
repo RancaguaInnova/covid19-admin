@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   TextInput,
   SimpleForm,
@@ -7,11 +7,11 @@ import {
   minLength,
   maxLength,
   Edit,
-  BooleanInput
-} from "react-admin";
+  BooleanInput,
+} from "react-admin"
 
-const validateName = [required(), minLength(0), maxLength(5550)];
-const validateDate = [required()];
+const validateName = [required(), minLength(0), maxLength(5550)]
+const validateDate = [required()]
 const VaccinationEdit = ({ permissions, ...props }) => {
   return (
     <Edit title="Editar Vacunatorio" {...props}>
@@ -28,11 +28,13 @@ const VaccinationEdit = ({ permissions, ...props }) => {
         <TextInput source="address.latitude" label="Latitud" />
         <TextInput source="address.longitude" label="Longitud" />
         <TextInput source="phone" label="Telefono" />
+        <TextInput source="googleMapLink" label="Google Map Link" fullWidth />
+
         <BooleanInput source="temp" label="Temporal" />
 
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Edit>
-  );
-};
-export default VaccinationEdit;
+  )
+}
+export default VaccinationEdit

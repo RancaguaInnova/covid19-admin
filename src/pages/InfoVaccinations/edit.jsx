@@ -1,0 +1,43 @@
+import React from "react"
+import {
+  TextInput,
+  DateInput,
+  SimpleForm,
+  BooleanInput,
+  Edit,
+  ImageInput,
+  FileField,
+  FileInput,
+  ImageField,
+  DateTimeInput,
+  required,
+  minLength,
+  maxLength,
+  ReferenceInput,
+  SelectInput,
+  NumberInput,
+} from "react-admin"
+
+const validateDate = [required()]
+const InfoVaccinationsEdit = (props) => (
+  <Edit {...props} title={"Editando Información de Vacunación"}>
+    <SimpleForm>
+      <DateInput source="date" label="Fecha" validate={validateDate} />
+
+      <ReferenceInput
+        label="Vacunatorios"
+        source="vaccinationsId"
+        reference="vaccinations"
+        validate={[required()]}
+      >
+        <SelectInput optionText="name_place" />
+      </ReferenceInput>
+      <NumberInput source="pfizer" label="Nº Dosis Pfizer" />
+      <NumberInput source="sinovac" label="Nº Dosis Sinovac" />
+      <NumberInput source="cansino" label="Nº Dosis CanSino" />
+      <NumberInput source="astrazeneca" label="Nº Dosis Astrazeneca" />
+      <NumberInput source="johnsonjohnson" label="Nº Dosis Johnson & Johnson" />
+    </SimpleForm>
+  </Edit>
+)
+export default InfoVaccinationsEdit

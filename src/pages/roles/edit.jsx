@@ -1,7 +1,7 @@
-import React from 'react'
-import { TextInput, SimpleForm, BooleanInput, Labeled, Edit } from 'react-admin'
+import React from "react"
+import { TextInput, SimpleForm, BooleanInput, Labeled, Edit } from "react-admin"
 
-const AreaEdit = props => {
+const AreaEdit = (props) => {
   return (
     <Edit title="Editar Rol" {...props}>
       <SimpleForm>
@@ -197,6 +197,40 @@ const AreaEdit = props => {
             <BooleanInput
               label="Habilitado"
               source="vaccinations.enabled"
+              className="column16"
+            />
+          </span>
+        </Labeled>
+        <Labeled label="Informacion de Vacunatorios">
+          <span className="flex">
+            <BooleanInput
+              label="Crear"
+              source="infovaccinations.create"
+              className="column16"
+            />
+            <BooleanInput
+              label="Listar"
+              source="infovaccinations.list"
+              className="column16"
+            />
+            <BooleanInput
+              label="Editar"
+              source="infovaccinations.edit"
+              className="column16"
+            />
+            <BooleanInput
+              label="Mostrar"
+              source="infovaccinations.show"
+              className="column16"
+            />
+            <BooleanInput
+              label="Eliminar"
+              source="infovaccinations.delete"
+              className="column16"
+            />
+            <BooleanInput
+              label="Habilitado"
+              source="infovaccinations.enabled"
               className="column16"
             />
           </span>

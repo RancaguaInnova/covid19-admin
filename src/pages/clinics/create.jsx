@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
   DateTimeInput,
@@ -9,7 +9,7 @@ import {
   maxLength,
   BooleanInput,
   SelectInput,
-} from 'react-admin'
+} from "react-admin"
 
 const validateName = [required(), minLength(0), maxLength(5550)]
 const ActionCreate = ({ classes, ...props }) => {
@@ -18,6 +18,7 @@ const ActionCreate = ({ classes, ...props }) => {
       label="Crear"
       title="Crear Centro de Salud"
       {...props}
+      // @ts-ignore
       undoable={false}
     >
       <SimpleForm>
@@ -31,18 +32,18 @@ const ActionCreate = ({ classes, ...props }) => {
           source="category"
           label="Categoria"
           choices={[
-            { id: 'public', name: 'Publico' },
-            { id: 'private', name: 'Privado' },
+            { id: "public", name: "Publico" },
+            { id: "private", name: "Privado" },
           ]}
         />
         <SelectInput
           source="type"
           label="Tipo de Centro"
           choices={[
-            { id: 'hospital', name: 'Hospital' },
-            { id: 'clinic', name: 'Clinica' },
-            { id: 'cesfam', name: 'Centro de Salud Familiar' },
-            { id: 'cecof', name: 'Centro Comunitario de Salud' },
+            { id: "hospital", name: "Hospital" },
+            { id: "clinic", name: "Clinica" },
+            { id: "cesfam", name: "Centro de Salud Familiar" },
+            { id: "cecof", name: "Centro Comunitario de Salud" },
           ]}
         />
         <TextInput
