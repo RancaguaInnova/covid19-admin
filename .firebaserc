@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "covid-19-97965"
+  },
+  "targets": {
+    "covid-19-97965": {
+      "hosting": {
+        "admin": [
+          "admin-covid19"
+        ]
+      }
+    }
+  }
+}
