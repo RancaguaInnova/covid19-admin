@@ -4,13 +4,10 @@ import {
   SimpleForm,
   DateInput,
   required,
-  minLength,
-  maxLength,
   Edit,
   BooleanInput,
 } from "react-admin"
 
-const validateName = [required(), minLength(0), maxLength(5550)]
 const validateDate = [required()]
 const VaccinationEdit = ({ permissions, ...props }) => {
   return (
@@ -29,9 +26,7 @@ const VaccinationEdit = ({ permissions, ...props }) => {
         <TextInput source="address.longitude" label="Longitud" />
         <TextInput source="phone" label="Telefono" />
         <TextInput source="googleMapLink" label="Google Map Link" fullWidth />
-
         <BooleanInput source="temp" label="Temporal" />
-
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Edit>

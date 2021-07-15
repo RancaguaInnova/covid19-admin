@@ -18,7 +18,7 @@ import InfoVaccinations from "./pages/InfoVaccinations"
 import Services from "./pages/services"
 import Statistics from "./pages/statistics"
 
-const firebase = require("firebase")
+import firebase from "firebase"
 
 require("firebase/firestore")
 
@@ -41,72 +41,62 @@ const dataProvider = FirebaseDataProvider(firebaseConfig, options)
 const authProvider = AuthProvider()
 
 const App = () => (
-  <div>
-    <Admin
-      dataProvider={dataProvider}
-      i18nProvider={i18nProvider}
-      authProvider={authProvider}
-      loginPage={Inicio}
-    >
-      {(permissions) => {
-        console.log(permissions)
-        return [
-          <ResourceWithPermissions
-            name="news"
-            {...News}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="statistics"
-            {...Statistics}
-            permissions={permissions}
-          />,
+  <Admin
+    dataProvider={dataProvider}
+    i18nProvider={i18nProvider}
+    authProvider={authProvider}
+    loginPage={Inicio}
+  >
+    {(permissions) => {
+      return [
+        <ResourceWithPermissions
+          name="news"
+          {...News}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="statistics"
+          {...Statistics}
+          permissions={permissions}
+        />,
 
-          <ResourceWithPermissions
-            name="actions"
-            {...Actions}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="clinics"
-            {...Clinics}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="vaccinations"
-            {...Vaccinations}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="infovaccinations"
-            {...InfoVaccinations}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="services"
-            {...Services}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="roles"
-            {...Roles}
-            permissions={permissions}
-          />,
-          <ResourceWithPermissions
-            name="users"
-            {...Users}
-            permissions={permissions}
-          />,
-        ]
-      }}
-      {/*   <Resource name="news" {...News} />
-      <Resource name="actions" {...Actions} />
-      <Resource name="clinics" {...Clinics} />
-      <Resource name="vaccinations" {...Vaccinations} />
-
-      <Resource name="roles" {...Roles} />
-      <Resource name="users" {...Users} /> */}
-    </Admin>
-  </div>
+        <ResourceWithPermissions
+          name="actions"
+          {...Actions}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="clinics"
+          {...Clinics}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="vaccinations"
+          {...Vaccinations}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="infovaccinations"
+          {...InfoVaccinations}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="services"
+          {...Services}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="roles"
+          {...Roles}
+          permissions={permissions}
+        />,
+        <ResourceWithPermissions
+          name="users"
+          {...Users}
+          permissions={permissions}
+        />,
+      ]
+    }}
+  </Admin>
 )
 export default App

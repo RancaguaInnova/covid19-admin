@@ -1,31 +1,31 @@
-import React from "react";
+import React from "react"
 import {
   TextInput,
   SimpleForm,
   SelectInput,
   Edit,
-  ReferenceInput
-} from "react-admin";
+  ReferenceInput,
+} from "react-admin"
 
-const validateUserCreation = values => {
-  const errors = {};
+const validateUserCreation = (values) => {
+  const errors = {}
   if (!values.firstName) {
-    errors.firstName = ["Debe agregar el nombre del usuario"];
+    errors.firstName = ["Debe agregar el nombre del usuario"]
   }
   if (!values.lastName) {
-    errors.lastName = ["Debe agregar el Apellido del usuario"];
+    errors.lastName = ["Debe agregar el Apellido del usuario"]
   }
   if (!values.identifier) {
-    errors.identifier = ["Debe agregar el rut del usuario"];
+    errors.identifier = ["Debe agregar el rut del usuario"]
   }
 
   if (!values.role) {
-    errors.rol = ["Debe asociar un rol de permisos"];
+    errors.rol = ["Debe asociar un rol de permisos"]
   }
 
-  return errors;
-};
-const UserEdit = props => (
+  return errors
+}
+const UserEdit = (props) => (
   <Edit {...props} title="Editando usuario">
     <SimpleForm validate={validateUserCreation}>
       <TextInput source="firstName" label="Nombre" defaultValue="" />
@@ -39,7 +39,15 @@ const UserEdit = props => (
       <ReferenceInput label="Rol" source="role" reference="roles" perPage={500}>
         <SelectInput optionText="name" />
       </ReferenceInput>
+      <ReferenceInput
+        label="Vacunatorio Asignado"
+        source="vaccination"
+        reference="vaccinations"
+        perPage={500}
+      >
+        <SelectInput optionText="name_place" />
+      </ReferenceInput>
     </SimpleForm>
   </Edit>
-);
-export default UserEdit;
+)
+export default UserEdit

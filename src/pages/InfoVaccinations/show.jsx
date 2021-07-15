@@ -4,7 +4,6 @@ import {
   DateField,
   Show,
   SimpleShowLayout,
-  BooleanField,
   ReferenceField,
 } from "react-admin"
 const InfoVaccinationsShow = (props) => (

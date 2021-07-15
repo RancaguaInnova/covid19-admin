@@ -1,25 +1,13 @@
 import React from "react"
 import {
-  TextInput,
   DateInput,
   SimpleForm,
   Create,
-  BooleanInput,
-  ImageInput,
-  ImageField,
-  FileInput,
-  FileField,
-  DateTimeInput,
   required,
-  minLength,
-  maxLength,
   ReferenceInput,
   SelectInput,
   NumberInput,
 } from "react-admin"
-
-const validateName = [required(), minLength(0), maxLength(100)]
-const validateDescription = [minLength(0), maxLength(140)]
 
 const validateDate = [required()]
 const InfoVaccinationsCreate = (props) => (

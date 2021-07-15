@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
-  DateInput,
   SimpleForm,
   Create,
   BooleanInput,
@@ -13,13 +12,13 @@ import {
   required,
   minLength,
   maxLength,
-} from 'react-admin'
+} from "react-admin"
 
 const validateName = [required(), minLength(0), maxLength(100)]
 const validateDescription = [minLength(0), maxLength(140)]
 
 const validateDate = [required()]
-const NewsCreate = props => (
+const NewsCreate = (props) => (
   <Create title="Crear Noticias" {...props}>
     <SimpleForm>
       <DateTimeInput

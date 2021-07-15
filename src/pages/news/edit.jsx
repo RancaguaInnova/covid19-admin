@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
-  DateInput,
   SimpleForm,
   BooleanInput,
   Edit,
@@ -13,13 +12,13 @@ import {
   required,
   minLength,
   maxLength,
-} from 'react-admin'
+} from "react-admin"
 const validateName = [required(), minLength(0), maxLength(100)]
 const validateDescription = [minLength(0), maxLength(140)]
 
 const validateDate = [required()]
-const NewsEdit = props => (
-  <Edit {...props} title={'Editando Noticia'}>
+const NewsEdit = (props) => (
+  <Edit {...props} title={"Editando Noticia"}>
     <SimpleForm>
       <DateTimeInput
         source="date"
@@ -32,8 +31,7 @@ const NewsEdit = props => (
         validate={validateName}
         fullWidth
       />
-      {/*       <TextInput source="subtitle" label="Subtítulo" />
-       */}
+
       <TextInput
         source="description"
         label="Descripción"
@@ -45,7 +43,6 @@ const NewsEdit = props => (
 
       <ImageInput source="images" label="Imagenes" accept="image/*">
         <ImageField source="src" title="title" />
-
       </ImageInput>
       <FileInput
         source="documents"

@@ -1,25 +1,16 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
-  DateInput,
   SimpleForm,
   Create,
-  BooleanInput,
   ImageInput,
   ImageField,
-  FileInput,
-  FileField,
   DateTimeInput,
   required,
-  minLength,
-  maxLength,
-} from 'react-admin'
-
-const validateName = [required(), minLength(0), maxLength(100)]
-const validateDescription = [minLength(0), maxLength(140)]
+} from "react-admin"
 
 const validateDate = [required()]
-const NewsCreate = props => (
+const NewsCreate = (props) => (
   <Create title="Crear Cifras" {...props}>
     <SimpleForm>
       <DateTimeInput
@@ -27,15 +18,29 @@ const NewsCreate = props => (
         label="Fecha y Hora"
         validate={validateDate}
       />
-      <TextInput source="urlVideo"  label='Url video'  type='url' resettable={true} fullWidth/>
-      <ImageInput source="covidMap" label="Mapa Covid" accept="image/*" resettable={true} >
+      <TextInput
+        source="urlVideo"
+        label="Url video"
+        type="url"
+        resettable={true}
+        fullWidth
+      />
+      <ImageInput
+        source="covidMap"
+        label="Mapa Covid"
+        accept="image/*"
+        resettable={true}
+      >
         <ImageField source="src" title="title" />
       </ImageInput>
-      <ImageInput source="covidGraph" label="Gráfico Covid" accept="image/*" resettable={true} >
+      <ImageInput
+        source="covidGraph"
+        label="Gráfico Covid"
+        accept="image/*"
+        resettable={true}
+      >
         <ImageField source="src" title="title" />
       </ImageInput>
-     
-
     </SimpleForm>
   </Create>
 )

@@ -1,18 +1,9 @@
 import React from "react"
 import {
-  TextInput,
   DateInput,
   SimpleForm,
-  BooleanInput,
   Edit,
-  ImageInput,
-  FileField,
-  FileInput,
-  ImageField,
-  DateTimeInput,
   required,
-  minLength,
-  maxLength,
   ReferenceInput,
   SelectInput,
   NumberInput,

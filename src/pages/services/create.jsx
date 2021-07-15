@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react"
 import {
   TextInput,
-  DateTimeInput,
   SimpleForm,
   Create,
   required,
@@ -9,22 +8,20 @@ import {
   maxLength,
   BooleanInput,
   SelectInput,
-  ImageField,
-} from 'react-admin'
+} from "react-admin"
 
 const validateName = [required(), minLength(0), maxLength(255)]
-const validateDate = [required()]
 const ActionCreate = ({ classes, ...props }) => {
   return (
-    <Create label="Crear" title="Crear nuevo tramite y/o servicio" {...props}>
+    <Create title="Crear nuevo tramite y/o servicio" {...props}>
       <SimpleForm>
         <SelectInput
           source="category"
           label="Categoria"
           choices={[
-            { id: 'redtape', name: 'Tramites' },
-            { id: 'services', name: 'Servicios' },
-            { id: 'payment', name: 'Pagos' },
+            { id: "redtape", name: "Tramites" },
+            { id: "services", name: "Servicios" },
+            { id: "payment", name: "Pagos" },
           ]}
         />
         <TextInput

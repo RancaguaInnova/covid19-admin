@@ -5,16 +5,13 @@ import {
   SimpleForm,
   Create,
   required,
-  minLength,
-  maxLength,
   BooleanInput,
 } from "react-admin"
 
-const validateName = [required(), minLength(0), maxLength(5550)]
 const validateDate = [required()]
 const VaccinationCreate = ({ classes, ...props }) => {
   return (
-    <Create label="Crear" title="Crear Vacunatorio" {...props}>
+    <Create title="Crear Vacunatorio" {...props}>
       <SimpleForm redirect={"/vaccinations"}>
         <DateInput source="from" label="Fecha desde" validate={validateDate} />
         <DateInput source="to" label="Fecha hasta" validate={validateDate} />
@@ -29,9 +26,7 @@ const VaccinationCreate = ({ classes, ...props }) => {
         <TextInput source="address.longitude" label="Longitud" />
         <TextInput source="phone" label="Telefono" />
         <TextInput source="googleMapLink" label="Google Map Link" fullWidth />
-
         <BooleanInput source="temp" label="Temporal" />
-
         <BooleanInput source="active" label="Activo" />
       </SimpleForm>
     </Create>

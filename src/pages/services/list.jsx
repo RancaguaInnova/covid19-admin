@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   Datagrid,
   EditButton,
@@ -6,9 +6,8 @@ import {
   BooleanField,
   TextField,
   DeleteButton,
-  DateField,
   SelectField,
-} from 'react-admin'
+} from "react-admin"
 const ActionList = ({ ...props }) => (
   <List {...props} title="Listado  tramites y/o servicios">
     <Datagrid rowClick="edit">
@@ -16,9 +15,9 @@ const ActionList = ({ ...props }) => (
         source="category"
         label="Categoria"
         choices={[
-          { id: 'redtape', name: 'Tramites' },
-          { id: 'services', name: 'Servicios' },
-          { id: 'payment', name: 'Pagos' },
+          { id: "redtape", name: "Tramites" },
+          { id: "services", name: "Servicios" },
+          { id: "payment", name: "Pagos" },
         ]}
       />
       <TextField source="description" label="Descripción" />
