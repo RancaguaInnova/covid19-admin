@@ -10,25 +10,33 @@ import {
 } from "react-admin"
 
 const validateDate = [required()]
-const InfoVaccinationsEdit = (props) => (
-  <Edit {...props} title={"Editando Información de Vacunación"}>
-    <SimpleForm>
-      <DateInput source="date" label="Fecha" validate={validateDate} />
+const InfoVaccinationsEdit = (props) => {
+  const vaccination = localStorage.getItem("vaccination")
 
-      <ReferenceInput
-        label="Vacunatorios"
-        source="vaccinationsId"
-        reference="vaccinations"
-        validate={[required()]}
-      >
-        <SelectInput optionText="name_place" />
-      </ReferenceInput>
-      <NumberInput source="pfizer" label="Nº Dosis Pfizer" />
-      <NumberInput source="sinovac" label="Nº Dosis Sinovac" />
-      <NumberInput source="cansino" label="Nº Dosis CanSino" />
-      <NumberInput source="astrazeneca" label="Nº Dosis Astrazeneca" />
-      <NumberInput source="johnsonjohnson" label="Nº Dosis Johnson & Johnson" />
-    </SimpleForm>
-  </Edit>
-)
+  return (
+    <Edit {...props} title={"Editando Información de Vacunación"}>
+      <SimpleForm>
+        <DateInput source="date" label="Fecha" validate={validateDate} />
+
+        <ReferenceInput
+          label="Vacunatorios"
+          source="vaccinationsId"
+          reference="vaccinations"
+          validate={[required()]}
+          filter={vaccination}
+        >
+          <SelectInput optionText="name_place" />
+        </ReferenceInput>
+        <NumberInput source="pfizer" label="Nº Dosis Pfizer" />
+        <NumberInput source="sinovac" label="Nº Dosis Sinovac" />
+        <NumberInput source="cansino" label="Nº Dosis CanSino" />
+        <NumberInput source="astrazeneca" label="Nº Dosis Astrazeneca" />
+        <NumberInput
+          source="johnsonjohnson"
+          label="Nº Dosis Johnson & Johnson"
+        />
+      </SimpleForm>
+    </Edit>
+  )
+}
 export default InfoVaccinationsEdit
